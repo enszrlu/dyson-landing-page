@@ -29,10 +29,9 @@ body::before {
 }
 
 .caption {
-    bottom: 0;
     left: 10%;
+    bottom: 0;
     z-index: 20;
-    /* color: black; */
 }
 
 .brand {
@@ -41,7 +40,7 @@ body::before {
 
 .carousel-caption {
     text-align: left;
-    left: 15%;
+    left: 10%;
     top: 10%;
     padding: 5px;
 }
@@ -91,4 +90,22 @@ body::before {
 
 .icon-big {
     font-size: 70px;
+}
+
+@media (max-width: 992px) {
+    body::before {
+        height: 56px;
+    }
+
+    .carousel-captions {
+        position: relative;
+        left: 20%;
+        top: 10%;
+    }
+}
+
+@media (max-width: 520px) {
+    .navbar {
+        font-size: 14px;
+    }
 }
