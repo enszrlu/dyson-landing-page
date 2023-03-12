@@ -1,6 +1,10 @@
 @import url(//db.onlinewebfonts.com/c/543337aba2ed98210be81a0d911561ca?family=Dessau);
 @import url(//db.onlinewebfonts.com/c/9f82eae7cc8a4b5446cab419c35ed29c?family=Dessau-Light);
 
+:root {
+    --rotate-animation-multiplier: 2s;
+}
+
 .form-control {
     outline: 0;
     border-width: 0;
@@ -107,5 +111,226 @@ body::before {
 @media (max-width: 520px) {
     .navbar {
         font-size: 14px;
+    }
+}
+
+.navbar-brand span {
+    position: relative;
+    display: inline-block;
+}
+
+#d_rotate {
+    animation: driftingWithWind_D calc(var(--rotate-animation-multiplier) * 2);
+}
+
+@keyframes driftingWithWind_D {
+    0% {
+        left: -50px;
+        bottom: 0;
+        transform: rotate(180deg);
+    }
+    10% {
+        bottom: 3px;
+    }
+    20% {
+        bottom: 0px;
+    }
+
+    40% {
+        bottom: 5px;
+    }
+    60% {
+        bottom: 0px;
+    }
+    70% {
+        bottom: 3px;
+    }
+    100% {
+        left: 0px;
+        bottom: 0;
+        transform: rotateZ(1800deg);
+    }
+}
+
+#y_rotate {
+    animation: driftingWithWind_Y calc(var(--rotate-animation-multiplier) * 1.75);
+}
+
+@keyframes driftingWithWind_Y {
+    0% {
+        left: -50px;
+        bottom: 0;
+        transform: rotate(180deg);
+    }
+    20% {
+        bottom: 5px;
+    }
+    40% {
+        bottom: 0px;
+    }
+    70% {
+        bottom: 7px;
+    }
+    100% {
+        left: 0px;
+        bottom: 0;
+        transform: rotateZ(1080deg);
+    }
+}
+
+#s_rotate {
+    animation: driftingWithWind_S calc(var(--rotate-animation-multiplier) * 1.5);
+}
+
+@keyframes driftingWithWind_S {
+    0% {
+        left: -50px;
+        bottom: 0;
+        transform: rotate(180deg);
+    }
+    20% {
+        bottom: 3px;
+    }
+    40% {
+        bottom: 0px;
+    }
+    70% {
+        bottom: 5px;
+    }
+    100% {
+        left: 0px;
+        bottom: 0;
+        transform: rotateZ(1080deg);
+    }
+}
+
+#o_rotate {
+    animation: driftingWithWind_O calc(var(--rotate-animation-multiplier) * 1.25);
+}
+
+@keyframes driftingWithWind_O {
+    0% {
+        left: -50px;
+        bottom: 0;
+        transform: rotate(180deg);
+    }
+    20% {
+        bottom: 5px;
+    }
+    40% {
+        bottom: 0px;
+    }
+    60% {
+        bottom: 3px;
+    }
+    100% {
+        left: 0px;
+        bottom: 0;
+        transform: rotateZ(1080deg);
+    }
+}
+
+#n_rotate {
+    animation: driftingWithWind_N var(--rotate-animation-multiplier);
+}
+
+@keyframes driftingWithWind_N {
+    0% {
+        left: -50px;
+        bottom: 0;
+        transform: rotate(180deg);
+    }
+    30% {
+        bottom: 5px;
+    }
+    60% {
+        bottom: 0px;
+    }
+    80% {
+        bottom: 5px;
+    }
+    100% {
+        left: 0px;
+        bottom: 0;
+        transform: rotateZ(1080deg);
+    }
+}
+
+.wavy-container {
+    width: 70px;
+    height: 50px;
+    background-color: transparent;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 0px;
+    bottom: 5px;
+}
+
+.wavy {
+    height: 20px;
+    width: 150px;
+}
+.wavy::before {
+    content: '........................................................................................................................................................................................................................................................................';
+    position: relative;
+    top: 0px;
+    left: 0;
+    font-size: 0.5em;
+    color: transparent;
+    text-decoration-style: wavy;
+    text-decoration-color: white;
+    text-decoration-line: underline;
+    animation: wave 4s linear forwards;
+    display: block;
+    z-index: 999;
+}
+.wavy:nth-last-of-type(2)::before {
+    top: 0px;
+}
+.wavy:nth-last-of-type(1)::before {
+    top: -10px;
+}
+.wavy:nth-last-of-type(3)::before {
+    top: 10px;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(-100px);
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 0;
+    }
+}
+
+.hair-dryer {
+    height: 50px;
+    width: 50px;
+    background: url(../img/hairdryer.png);
+    background-size: cover;
+    z-index: 999;
+    top: 5px;
+    left: -5px;
+    transform: rotateY(180deg);
+    animation: dryer 4s linear forwards;
+}
+@keyframes dryer {
+    0% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+        left: -5px;
+    }
+    100% {
+        opacity: 1;
+        left: -50px;
     }
 }
