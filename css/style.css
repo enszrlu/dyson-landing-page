@@ -1,5 +1,14 @@
-@import url(https://db.onlinewebfonts.com/c/543337aba2ed98210be81a0d911561ca?family=Dessau);
-@import url(https://db.onlinewebfonts.com/c/9f82eae7cc8a4b5446cab419c35ed29c?family=Dessau-Light);
+/* @import url(https://db.onlinewebfonts.com/c/543337aba2ed98210be81a0d911561ca?family=Dessau);
+@import url(https://db.onlinewebfonts.com/c/9f82eae7cc8a4b5446cab419c35ed29c?family=Dessau-Light); */
+
+@font-face {
+    font-family: 'Dessau';
+    src: url('../src/fonts/Dessau.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
+@font-face {
+    font-family: 'Dessau-Light';
+    src: url('../src/fonts/Dessau-Light-Regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+}
 
 :root {
     --rotate-animation-multiplier: 2s;
